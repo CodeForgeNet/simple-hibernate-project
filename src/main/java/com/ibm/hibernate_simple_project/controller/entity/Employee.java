@@ -1,15 +1,16 @@
 package com.ibm.hibernate_simple_project.controller.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
 	
 	private int id;
-	@Setter
 	private String name;
-	@Setter
 	private String email;
 	private Long phone;
 	
