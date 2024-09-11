@@ -54,7 +54,7 @@
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>
     <version>6.5.2.Final</version>
-    <type>pom</type>
+ 
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
