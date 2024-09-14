@@ -1,5 +1,7 @@
 package com.ibm.hibernate_simple_project.controller.dao;
 
+import java.util.List;
+
 import com.ibm.hibernate_simple_project.controller.entity.Employee;
 
 import jakarta.persistence.EntityManager;
@@ -52,13 +54,15 @@ public class EmployeeDao {
 	
 //	Update
 	
-	public Employee updateEmployeeByIdDao(int empId, String name) {
+	public Employee updateEmployeeByIdDao(int empId, String name, String email, long phone) {
 
 		Employee employee = getEmployeeByIdDao(empId);
 
 		if (employee != null) {
 			
 			employee.setName(name);
+			employee.setEmail(email);
+			employee.setPhone(phone);
 			
 			et.begin();
 			em.merge(employee);
@@ -70,6 +74,12 @@ public class EmployeeDao {
 		}
 
 	}	
+	
+	
+//	Display  all emp
+	public List<Employee> displayAllEmployeeDao(){
+		return em.createQuery("FROM Employee").getResultList();
+	}
 	
 
 }

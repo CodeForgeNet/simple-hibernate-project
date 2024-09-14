@@ -1,5 +1,6 @@
 package com.ibm.hibernate_simple_project.controller;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.ibm.hibernate_simple_project.controller.dao.EmployeeDao;
@@ -40,15 +41,26 @@ public class EmployeeInsertController {
 			} else if (ch == 's' || ch == 'S') {
 //    	    	Fetch
 
-				int id;
-				System.out.print("Enter id to display data : ");
-				id = sc.nextInt();
-				Employee emp = dao.getEmployeeByIdDao(id);
+				System.out.println("Enter '1' to display single emp\nEnter '2' to display all emp");
+				int inp = sc.nextInt();
 
-				if (emp != null) {
-					System.out.println(emp);
+				if (inp == 1) {
+
+					int id;
+					System.out.print("Enter id to display data : ");
+					id = sc.nextInt();
+					Employee emp = dao.getEmployeeByIdDao(id);
+
+					if (emp != null) {
+						System.out.println(emp);
+					} else {
+						System.out.println("something went wrong check id");
+					}
+				} else if (inp == 2) {
+					List<Employee> employees = dao.displayAllEmployeeDao();
+					employees.forEach(e -> System.out.println(e));
 				} else {
-					System.out.println("something went wrong check id");
+					System.out.println("Enter valid input ");
 				}
 
 			} else if (ch == 'd' || ch == 'D') {
@@ -64,18 +76,34 @@ public class EmployeeInsertController {
 					System.out.println("something went wrong check id");
 				}
 
-			} else if(ch=='u' || ch=='U') {
-				
+			} else if (ch == 'u' || ch == 'U') {
+//			Update
 				System.out.print("Enter id to change name: ");
-				int id= sc.nextInt();
+				int id = sc.nextInt();
+
+				System.out.print("Enter name to update: ");
+				String name = sc.next();
 				
+				System.out.println("Enter email to update: ");
+				String email = sc.next();
 				
-				
-			}else {
-				System.out.println("Enter valid input");
+				System.out.println("Enter phone to update: ");
+				long phone = sc.nextLong();
+
+				Employee b = dao.updateEmployeeByIdDao(id, name, email, phone);
+
+				if (b != null) {
+					System.out.println(b);
+					System.out.println("Data Updated");
+				} else {
+					System.out.println("Something went wrong ..check your emp id");
+				}
+
+			} else {
+				System.out.println("You Exited");
 			}
 
-		} while (ch != 'x' || ch != 'X');
+		} while (ch != 'x' && ch != 'X');
 		sc.close();
 	}
 }
