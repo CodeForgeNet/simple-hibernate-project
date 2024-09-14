@@ -48,5 +48,28 @@ public class EmployeeDao {
 		}
 
 	}
+	
+	
+//	Update
+	
+	public Employee updateEmployeeByIdDao(int empId, String name) {
+
+		Employee employee = getEmployeeByIdDao(empId);
+
+		if (employee != null) {
+			
+			employee.setName(name);
+			
+			et.begin();
+			em.merge(employee);
+			et.commit();
+			
+			return employee;
+		} else {
+			return null;
+		}
+
+	}	
+	
 
 }

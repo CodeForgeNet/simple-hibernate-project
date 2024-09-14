@@ -16,7 +16,7 @@ public class EmployeeInsertController {
 
 		do {
 			System.out.println(
-					"\n\nEnter 'i/I' to insert data \nEnter 's/S' to display data\nEnter 'd/D' for delete\nEnter 'x/X to exit");
+					"\n\nEnter 'i/I' to insert data \nEnter 's/S' to display data\nEnter 'd/D' for delete\nEnter 'u/U' to update\nEnter 'x/X to exit");
 			ch = sc.next().charAt(0);
 
 			if (ch == 'i' || ch == 'I') {
@@ -26,8 +26,7 @@ public class EmployeeInsertController {
 				int id = sc.nextInt();
 
 				System.out.print("Enter name: ");
-				String name = sc.nextLine();
-				sc.next();
+				String name = sc.next();
 
 				System.out.print("Enter email: ");
 				String email = sc.next();
@@ -65,7 +64,14 @@ public class EmployeeInsertController {
 					System.out.println("something went wrong check id");
 				}
 
-			} else {
+			} else if(ch=='u' || ch=='U') {
+				
+				System.out.print("Enter id to change name: ");
+				int id= sc.nextInt();
+				
+				
+				
+			}else {
 				System.out.println("Enter valid input");
 			}
 
