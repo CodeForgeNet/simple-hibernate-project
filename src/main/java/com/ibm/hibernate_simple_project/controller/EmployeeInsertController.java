@@ -65,6 +65,7 @@ public class EmployeeInsertController {
 
 			} else if (ch == 'd' || ch == 'D') {
 //    		Delete
+				
 				int id;
 				System.out.print("Enter id to delete data : ");
 				id = sc.nextInt();
@@ -78,6 +79,7 @@ public class EmployeeInsertController {
 
 			} else if (ch == 'u' || ch == 'U') {
 //			Update
+				
 				System.out.print("Enter id to change name: ");
 				int id = sc.nextInt();
 
@@ -96,7 +98,7 @@ public class EmployeeInsertController {
 					System.out.println(b);
 					System.out.println("Data Updated");
 				} else {
-					System.out.println("Something went wrong ..check your emp id");
+					System.out.println("Something went wrong.. check your employee id");
 				}
 
 			} else {
