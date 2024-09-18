@@ -38,7 +38,7 @@ public class EmployeeInsertController {
 				Employee employee = new Employee(id, name, email, phone);
 				dao.saveEmployeeDao(employee);
 
-			} else if (ch == 's' || ch == 'S') {
+			} else if (ch == 's' || ch == 'S') {   
 //    	    	Fetch
 
 				System.out.println("Enter '1' to display single emp\nEnter '2' to display all emp");
@@ -64,6 +64,7 @@ public class EmployeeInsertController {
 				}
 
 			} else if (ch == 'd' || ch == 'D') {
+				
 //    		Delete
 				
 				int id;
@@ -83,10 +84,10 @@ public class EmployeeInsertController {
 				System.out.print("Enter id to change name: ");
 				int id = sc.nextInt();
 
-				System.out.print("Enter name to update: ");
+				System.out.print("Enter name to Update: ");
 				String name = sc.next();
 				
-				System.out.println("Enter email to update: ");
+				System.out.println("Enter email to Update: ");
 				String email = sc.next();
 				
 				System.out.println("Enter phone to update: ");
