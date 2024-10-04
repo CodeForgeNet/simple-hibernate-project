@@ -17,22 +17,22 @@ public class EmployeeInsertController {
 
 		do {
 			System.out.println(
-					"\n\nEnter 'i/I' to insert data \nEnter 's/S' to display data\nEnter 'd/D' for delete\nEnter 'u/U' to update\nEnter 'x/X to exit");
+					"\n\nEnter 'i/I' to insert data \nEnter 's/S' to display data\nEnter 'd/D' for delete\nEnter 'u/U' to update\nEnter 'x/X to exit ");
 			ch = sc.next().charAt(0);
 
 			if (ch == 'i' || ch == 'I') {
 //    	    	Insert
 
-				System.out.print("Enter id: ");
+				System.out.print("Enter Id: ");
 				int id = sc.nextInt();
 
-				System.out.print("Enter name: ");
+				System.out.print("Enter Name: ");
 				String name = sc.next();
 
-				System.out.print("Enter email: ");
+				System.out.print("Enter Email: ");
 				String email = sc.next();
 
-				System.out.print("Enter phone: ");
+				System.out.print("Enter Phone: ");
 				long phone = sc.nextLong();
 
 				Employee employee = new Employee(id, name, email, phone);
